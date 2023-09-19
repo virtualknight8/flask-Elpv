@@ -14,7 +14,7 @@ postgres_password = os.environ.get('PGPASSWORD')
 @app.route('/')
 def index():
   # Create a connection to the PostgreSQL database
-try:
+  try:
     conn = psycopg2.connect(
         host=postgres_host,
         port=postgres_port,
