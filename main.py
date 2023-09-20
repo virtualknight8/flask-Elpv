@@ -15,7 +15,7 @@ postgres_password = os.environ.get('PGPASSWORD')
 def index():
   # Create a connection to the PostgreSQL database
     try:
-    conn = psycopg2.connect(
+        conn = psycopg2.connect(
         host=postgres_host,
         port=postgres_port,
         database=postgres_db,
@@ -24,15 +24,14 @@ def index():
     )
 
     # If the connection is successful, print a success message
-    print("Connected to PostgreSQL successfully!")
+        print("Connected to PostgreSQL successfully!")
 
     # Close the connection
-    conn.close()
+        conn.close()
 
     except psycopg2.Error as e:
     # If there's an error, print an error message
-    print("Error connecting to PostgreSQL:", e)
+        print("Error connecting to PostgreSQL:", e)
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
-
