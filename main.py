@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 import os
-import psycopg2_binary as psycopg2
+import psycopg2
 
 
 app = Flask(__name__)
@@ -26,14 +26,14 @@ def index():
     )
 
     # If the connection is successful, print a success message
-        print("Connected to PostgreSQL successfully!")
+        return("Connected to PostgreSQL successfully!")
 
     # Close the connection
         conn.close()
 
     except psycopg2.Error as e:
     # If there's an error, print an error message
-        print("Error connecting to PostgreSQL:", e)
+        return("Error connecting to PostgreSQL:", str(e))
     
 
 if __name__ == '__main__':
