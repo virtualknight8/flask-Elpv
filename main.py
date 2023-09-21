@@ -1,15 +1,15 @@
 from flask import Flask, jsonify
 import os
-import psycopg2
+
 
 app = Flask(__name__)
 
 # Get PostgreSQL connection details from environment variables
-postgres_host = os.environ.get('PGHOST')
-postgres_port = os.environ.get('PGPORT')
-postgres_db = os.environ.get('PGDATABASE')
-postgres_user = os.environ.get('PGUSER')
-postgres_password = os.environ.get('PGPASSWORD')
+# postgres_host = os.environ.get('PGHOST')
+# postgres_port = os.environ.get('PGPORT')
+# postgres_db = os.environ.get('PGDATABASE')
+# postgres_user = os.environ.get('PGUSER')
+# postgres_password = os.environ.get('PGPASSWORD')
 newvar = os.environ.get('HABIBI')
 
 @app.route('/')
